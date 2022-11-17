@@ -15,11 +15,12 @@ textarea {
 button {
 	cursor: pointer;
 }
-
-.center-container {
+#center-container {
 	padding: 0;
 	width: 960px;
 	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
 }
 .text-add {
 	color: #8C8C8C;
@@ -27,12 +28,13 @@ button {
 	padding-left: 35px;
 }
 #column-left {
-	width: 475px;
+	padding-left: 15px;
+	width: 470px;
 	float: left;
 	margin-top: 50px;
 }
 #column-right {
-	width: 475px;
+	width: 470px;
 	float: right;
 	margin-top: 50px;
 }
@@ -155,16 +157,44 @@ button {
 	text-align: center;
 }
 
-@media screen and (max-width: 990px) {
-	.center-container {
-		display: none;
+@media screen and (max-width: 1000px) {
+	#center-container {
+		width: auto;
 	}
-	#display-mobile {
-		display: flex;
+}
+@media screen and (max-width: 970px) {
+	#center-container {
+		flex-direction: column-reverse;
+		align-content: center;
 	}
-	#sorry {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
+	#column-right {
+		padding-left: 15px;
+	}
+}
+@media screen and (max-width: 520px) {
+	#column-left, #column-right {
+		width: 400px;
+	}
+	#name-add-new, #discription-add-new {
+		width: 330px;
+		margin-left: 30px;
+	}
+	#button-main {
+		margin-left: 30px;
+	}
+}
+@media screen and (max-width: 450px) {
+	#column-left, #column-right {
+		width: 300px;
+	}
+	#name-add-new, #discription-add-new {
+		width: 250px;
+		margin-left: 20px;
+	}
+	#button-main {
+		margin-left: 20px;
+	}
+	.text-add {
+		padding-left: 20px;
 	}
 }
