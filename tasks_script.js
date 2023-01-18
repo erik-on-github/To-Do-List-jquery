@@ -3,17 +3,17 @@ $(function(){
 		if($('#name-add-new').val() != 0 && $('#discription-add-new').val() != 0)
 		{
 			$('#clear').css('display', 'none');
-			var nameVal = $('#name-add-new').val();
-			var discriptionVal = $('#discription-add-new').val();
+			let nameVal = $('#name-add-new').val();
+			let discriptionVal = $('#discription-add-new').val();
 			$('#discription-add-new').val(undefined);
 			$('#name-add-new').val(undefined);
-			var newTask = $('<div id="view-of-task" style="width: 400px;"></div>');
+			let newTask = $('<div id="view-of-task" style="width: 400px;"></div>');
 			$('#list-of-tasks').prepend(newTask);
-			var newName = $('<div id="name-new-here"></div>');
-			var newD = $('<div id="d-new-here"></div>');
-			var deleteButton = $('<button class="delete-button"><i class="bi bi-x-lg"></button>');
-			var hideButton = $('<button class="hide-button"><i class="bi bi-caret-down-fill"></button>');
-			var showButton = $('<button class="show-button"><i class="bi bi-caret-up-fill"></button>');
+			let newName = $('<div id="name-new-here"></div>');
+			let newD = $('<div id="d-new-here"></div>');
+			let deleteButton = $('<button class="delete-button"><i class="bi bi-x-lg"></button>');
+			let hideButton = $('<button class="hide-button"><i class="bi bi-caret-down-fill"></button>');
+			let showButton = $('<button class="show-button"><i class="bi bi-caret-up-fill"></button>');
 			newName.text(nameVal);
 			newD.text(discriptionVal);
 			$('#view-of-task').prepend(newName);
@@ -23,7 +23,7 @@ $(function(){
 			$('#view-of-task').append(newD);
 			function checkClear() 
 			{
-				var element = document.getElementById('name-new-here');
+				let element = document.getElementById('name-new-here');
 				if(!element){
 					$('#clear').css('display', 'inline-block');
 				}
@@ -74,18 +74,18 @@ $(function(){
 		if($('#name-add-new').val() != 0)
 		{
 			$('#clear').css('display', 'none');
-			var nameVal = $('#name-add-new').val();
+			let nameVal = $('#name-add-new').val();
 			$('#name-add-new').val(undefined);
-			var newTask = $('<div id="view-of-task" style="width: 400px;"></div>');
+			let newTask = $('<div id="view-of-task" style="width: 400px;"></div>');
 			$('#list-of-tasks').prepend(newTask);
-			var newName = $('<div id="name-new-here" style="border-bottom: 0px"></div>');
-			var deleteButton = $('<button class="delete-button"><i class="bi bi-x-lg"></button>');
+			let newName = $('<div id="name-new-here" style="border-bottom: 0px"></div>');
+			let deleteButton = $('<button class="delete-button"><i class="bi bi-x-lg"></button>');
 			newName.text(nameVal);
 			$('#view-of-task').prepend(newName);
 			$('#view-of-task').prepend(deleteButton);
 			function checkClear() 
 			{
-				var element = document.getElementById('name-new-here');
+				let element = document.getElementById('name-new-here');
 				if(!element){
 					$('#clear').css('display', 'inline-block');
 				}
@@ -107,3 +107,4 @@ $(function(){
    		}
 	});
 });
+// Добавлять названия в массив, потом в localStorage по кускам загрузить и оттуда доставать
