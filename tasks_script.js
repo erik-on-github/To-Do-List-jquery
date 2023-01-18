@@ -30,11 +30,7 @@ $(function(){
 			}
 			setInterval(checkClear, 100);
 			deleteButton.on('click', function(){
-				$(newName).remove();
-				$(newD).remove();
-				$(this).remove();
-				$(hideButton).remove();
-				$(showButton).remove();
+				$(newTask).remove();
 			});
 			hideButton.on('click', function(){
 				$(this).hide();
@@ -71,7 +67,7 @@ $(function(){
 				}, 100);
 			}); 
 		}
-		if($('#name-add-new').val() != 0)
+		if($('#name-add-new').val() != 0 && $('#discription-add-new').val() == 0)
 		{
 			$('#clear').css('display', 'none');
 			let nameVal = $('#name-add-new').val();
@@ -92,11 +88,7 @@ $(function(){
 			}
 			setInterval(checkClear, 100);
 			deleteButton.on('click', function(){
-				$(newName).remove();
-				$(newD).remove();
-				$(this).remove();
-				$(hideButton).remove();
-				$(showButton).remove();
+				$(newTask).remove();
 			});
 		}
 	});
@@ -107,4 +99,6 @@ $(function(){
    		}
 	});
 });
-// Добавлять названия в массив, потом в localStorage по кускам загрузить и оттуда доставать
+// При создании сохраняются данные в 2 видах localStorage(описания и названия), при загрузке - проверка - есть или нет
+// если сохраняется только названиние, то  сохраняется в сторэдж с описание пустота, на которую при прогрузке проверяем
+// при загрузке, если что-то есть, разбиваем оба массива на отдельные объекты и херачим на страницу
