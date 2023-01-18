@@ -7,13 +7,13 @@ $(function(){
 			var discriptionVal = $('#discription-add-new').val();
 			$('#discription-add-new').val(undefined);
 			$('#name-add-new').val(undefined);
-			var newTask = $('<div id="view-of-task"></div>');
+			var newTask = $('<div id="view-of-task" style="width: 400px;"></div>');
 			$('#list-of-tasks').prepend(newTask);
 			var newName = $('<div id="name-new-here"></div>');
 			var newD = $('<div id="d-new-here"></div>');
-			var deleteButton = $('<button class="delete-button"></button>');
-			var hideButton = $('<button class="hide-button"></button>');
-			var showButton = $('<button class="show-button"></button>');
+			var deleteButton = $('<button class="delete-button"><i class="bi bi-x-lg"></button>');
+			var hideButton = $('<button class="hide-button"><i class="bi bi-caret-down-fill"></button>');
+			var showButton = $('<button class="show-button"><i class="bi bi-caret-up-fill"></button>');
 			newName.text(nameVal);
 			newD.text(discriptionVal);
 			$('#view-of-task').prepend(newName);
@@ -46,6 +46,11 @@ $(function(){
 				setTimeout(function(){
 					$(newD).hide();
 				}, 400);
+				setTimeout(function(){
+					$(newName).css({
+						'border-bottom': '0px'
+					});
+				}, 300);
 			}); 
 			showButton.on('click', function(){
 				$(this).hide();
@@ -59,7 +64,40 @@ $(function(){
 				setTimeout(function(){
 					$(newD).show();
 				}, 100);
+				setTimeout(function(){
+					$(newName).css({
+						'border-bottom': '1px solid #c9c9c9'
+					});
+				}, 100);
 			}); 
+		}
+		if($('#name-add-new').val() != 0)
+		{
+			$('#clear').css('display', 'none');
+			var nameVal = $('#name-add-new').val();
+			$('#name-add-new').val(undefined);
+			var newTask = $('<div id="view-of-task" style="width: 400px;"></div>');
+			$('#list-of-tasks').prepend(newTask);
+			var newName = $('<div id="name-new-here" style="border-bottom: 0px"></div>');
+			var deleteButton = $('<button class="delete-button"><i class="bi bi-x-lg"></button>');
+			newName.text(nameVal);
+			$('#view-of-task').prepend(newName);
+			$('#view-of-task').prepend(deleteButton);
+			function checkClear() 
+			{
+				var element = document.getElementById('name-new-here');
+				if(!element){
+					$('#clear').css('display', 'inline-block');
+				}
+			}
+			setInterval(checkClear, 100);
+			deleteButton.on('click', function(){
+				$(newName).remove();
+				$(newD).remove();
+				$(this).remove();
+				$(hideButton).remove();
+				$(showButton).remove();
+			});
 		}
 	});
 	$(document).keydown(function(event) {
@@ -68,5 +106,4 @@ $(function(){
      	   $('#button-main').click();
    		}
 	});
-	
 });

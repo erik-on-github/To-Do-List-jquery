@@ -2,7 +2,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-family: arial;
-	background: #D2D2D2;
+	background: #43885b;
 }
 textarea {
 	margin-left: 35px;
@@ -10,10 +10,14 @@ textarea {
 	resize: none;
 	width: 400px;
 	border-color: #D2D2D2;
+	background-color: #efefef;
 	border-radius: 8px;
 }
 button {
 	cursor: pointer;
+}
+#header_left, #clear, #header_right {
+	color: #ffffff;
 }
 #center-container {
 	padding: 0;
@@ -39,8 +43,13 @@ button {
 	margin-top: 50px;
 }
 #block-add {
-	background: white;
+	background: #efefef;
 	margin-top: 20px;
+	border-radius: 10px;
+	opacity: 0.8;
+}
+#block-add:focus-within {
+	opacity: 1;
 }
 #header_left {
 	font-size: 20px;
@@ -50,6 +59,7 @@ button {
 }
 #name-add-new {
 	height: 40px;
+	overflow: hidden;
 }
 #discription-add-new {
 	height: 200px;
@@ -62,6 +72,7 @@ button {
 	margin-left: 35px;
 	margin-top: 15px;
 	margin-bottom: 25px;
+	border-radius: 10px;
 }
 .todaytask {
 	margin: 20px;
@@ -72,15 +83,16 @@ button {
 	margin-top: 20px;
 	width: 465px;
 	height: 500px;
+	padding-right: 30px;
 }
 #view-of-task {
-	background-color: white;
+	background-color: #efefef;
 	width: 465px;
 	margin-bottom: 15px;
+	border-radius: 10px;
 }
 #clear {
 	margin-top: 20px;
-	color: #8C8C8C;
 }
 #name-new-here {
 	padding-right: 15px;
@@ -98,38 +110,22 @@ button {
 	color: #8C8C8C;
 	padding-bottom: 40px;
 }
-.delete-button {
+.hide-button, .show-button, .delete-button {
 	cursor: pointer;
-	border: none;
 	float: right;
-	width: 15px;
-	height: 15px;
-	background-image: url(img/Red-Close-Button.png);
-	background-repeat: no-repeat;
-	margin-right: 15px;
-	margin-top: 15px;
+	border: none;	
 }
-.hide-button {
-	cursor: pointer;
-	float: right;
-	border: none;
-	width: 15px;
-	height: 15px;
-	background-image: url(img/open.png);
-	background-repeat: no-repeat;
-	margin-right: 15px;
-	margin-top: 15px;
+.hide-button, .show-button {
+	font-size: 22px;
+	margin-top: 8px;
+	margin-right: 5px;
+}
+.delete-button {
+	font-size: 20px;
+	margin-right: 20px;
+	margin-top: 10px;
 }
 .show-button {
-	cursor: pointer;
-	float: right;
-	border: none;
-	width: 15px;
-	height: 15px;
-	background-image: url(img/hide.png);
-	background-repeat: no-repeat;
-	margin-right: 15px;
-	margin-top: 15px;
 	display: none;
 }
 #display-mobile {
